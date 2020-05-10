@@ -15,7 +15,7 @@ var monS3 = {
 }
 var pokemonList = [monS1, monS2, monS3];
 
-for (var i = 0, i< pokemonList.length; i++) {
+for (var i = 0; i< pokemonList.length; i++) {
   document.write('<h2>' + pokemonList[i].name + '</h2>' + ' Height: ' + pokemonList[i].height)
 if (pokemonList[i].height >= 1.0) {
   document.write(' (Wow that\'s big!)' )

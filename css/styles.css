@@ -1,0 +1,28 @@
+/* Portfolio Site Style Sheet */
+/*
+Colors used
+
+Background Color (light green)
+Text Color (Dark Gray): #2B2B2B;
+Primary Color #357b70;
+Secondary Color #e0b354;
+
+*/
+
+body{
+  background-color: #9dec9d;
+}
+
+body{
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+h2{
+  font-size: 24px;
+  font-weight:700;
+
+}
