@@ -15,10 +15,10 @@ var pokemonRepository = (function () {
     name: 'Nidorina',
     height: 1.8,
     types: ['grass', 'poison']
-
+  }
   var pokemonList = [monS1, monS2, monS3];
 
-  }
+  
   function add(pokemon) {
     pokemonList.push(pokemon);
   }
