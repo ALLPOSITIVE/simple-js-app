@@ -18,7 +18,7 @@ var pokemonRepository = (function () {
   }
   var pokemonList = [monS1, monS2, monS3];
 
-  
+
   function add(pokemon) {
     pokemonList.push(pokemon);
   }
@@ -33,7 +33,7 @@ var pokemonRepository = (function () {
   };
 })();
 
-getAll.forEach(function(pokemon){
+pokemonRepository.getAll().forEach(function(pokemon){
 document.write('<h2>' + pokemon.name + '</h2>' + ' Height: ' + pokemon.height)
 if (pokemon.height >= 1.0) {
 document.write(' (Wow that\'s big!)' )
