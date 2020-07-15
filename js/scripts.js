@@ -1,5 +1,3 @@
-
-
 var pokemonRepository = (function () {
   var monS1 = {
     name: 'Pikachu',
@@ -26,16 +24,23 @@ var pokemonRepository = (function () {
   function getAll() {
     return pokemonList;
   }
+  function addListItem(pokemon){
+    var unorderedList = document.querySelector('.pokemon-list')
+    var listItem = document.createElement('li')
+    var button = document.createElement('button')
+    button.innerText = "pokemon";
+    button.classList.add('button-style')
+    listItem.appendChild(button);
+    unorderedList.appendChild(listItem);
+  }
 
   return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
+    addListItem: addListItem
   };
 })();
 
 pokemonRepository.getAll().forEach(function(pokemon){
-document.write('<h2>' + pokemon.name + '</h2>' + ' Height: ' + pokemon.height)
-if (pokemon.height >= 1.0) {
-document.write(' (Wow that\'s big!)' )
-}
+addListItem();
 });

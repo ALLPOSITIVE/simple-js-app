@@ -18,3 +18,8 @@ h2{
   font-weight:700;
 
 }
+.button-style {
+  margin: 30px;
+  height: 30px;
+  width: 100px;
+}
