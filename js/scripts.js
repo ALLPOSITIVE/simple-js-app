@@ -26,7 +26,7 @@ var pokemonRepository = (function () {
   }
 
   function showDetails (pokemon){
-    console.log();
+    console.log(pokemon);
   }
   function addListItem(pokemon){
     var unorderedList = document.querySelector('.pokemon-list')
@@ -37,6 +37,7 @@ var pokemonRepository = (function () {
     listItem.appendChild(button);
     unorderedList.appendChild(listItem);
     button.addEventListener('click', function(event){
+      alert(pokemon.name);
       showDetails(pokemon);
     });
   }
