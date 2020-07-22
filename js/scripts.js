@@ -37,7 +37,6 @@ var pokemonRepository = (function () {
     listItem.appendChild(button);
     unorderedList.appendChild(listItem);
     button.addEventListener('click', function(event){
-      alert(pokemon.name);
       showDetails(pokemon);
     });
   }
