@@ -28,24 +28,26 @@ var pokemonRepository = (function () {
       console.error(e);
     })
   }
-
+// creates a button for the provided pokemon object and appends this button to the button list
   function addListItem(pokemon){
-    var unorderedList = document.querySelector('.pokemon-list')
-    var listItem = document.createElement('li')
-    var button = document.createElement('button')
+    var unorderedList = document.querySelector('.pokemon-list');
+    var listItem = document.createElement('li');
+    var button = document.createElement('button');
     button.innerText = pokemon.name;
     button.addEventListener('click', function(){
       showDetails(pokemon);
     })
-    button.classList.add('button-style')
+    button.classList.add('button-style');
     listItem.appendChild(button);
     unorderedList.appendChild(listItem);
   }
+  //calls loadDetails to fetch addl details for the provided pokemon object then logs it to the console
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
       console.log(pokemon);
     });
   }
+  //fetches addl details using the details detailsUrl of the provided pokemon object (item) and then adds to it
   function loadDetails(item) {
     var url = item.detailsUrl;
     return fetch(url).then(function (response) {
@@ -59,6 +61,7 @@ var pokemonRepository = (function () {
       console.error(e);
     });
   }
+  //to return the values which can be accessed outside of the IIFE
   return {
     add: add,
     getAll: getAll,
@@ -68,8 +71,9 @@ var pokemonRepository = (function () {
     loadDetails: loadDetails
   };
 })();
-pokemonRepository.loadList().then(function(){
-  pokemonRepository.getAll().forEach(function(pokemon){
+
+pokemonRepository.loadList().then(function(){  //calls loadList to asynchronously populate the pokemonList array
+  pokemonRepository.getAll().forEach(function(pokemon){ //this will loop over the array to create a button forEach pokemon within the array
     pokemonRepository.addListItem(pokemon);
   });
 });
