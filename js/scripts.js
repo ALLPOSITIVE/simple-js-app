@@ -64,7 +64,7 @@ var pokemonRepository = (function () {
       console.error(e);
     });
   }
-  function showModal(item) {
+  function showModal(title, text) {
     // Clear all existing modal content
     modalContainer.innerHTML = '';
 
@@ -78,10 +78,10 @@ var pokemonRepository = (function () {
     closeButtonElement.addEventListener('click', hideModal);
 
     var titleElement = document.createElement('h1');
-    titleElement.innerText = item;
+    titleElement.innerText = "title";
 
     var contentElement = document.createElement('p');
-    contentElement.innerText = name.pokemon;
+    contentElement.innerText = "text";
 
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
@@ -96,7 +96,7 @@ var pokemonRepository = (function () {
   }
 
   document.querySelector('#show-modal').addEventListener('click', () => {
-    showModal(item);
+    showModal('title', 'text');
   });
 
   window.addEventListener('keydown', (e) => {
