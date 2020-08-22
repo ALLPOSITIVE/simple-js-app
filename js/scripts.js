@@ -37,7 +37,7 @@ var pokemonRepository = (function () {
     var button = document.createElement('button');
     button.innerText = pokemon.name;
     button.addEventListener('click', function(){
-      showDetails(item);
+      showDetails(pokemon);
     })
     button.classList.add('button-style');
     listItem.appendChild(button);
@@ -45,9 +45,9 @@ var pokemonRepository = (function () {
   }
   //calls loadDetails to fetch addl details for the provided pokemon object then logs it to the console
   function showDetails(pokemon) {
-    loadDetails(item).then(function () {
+    loadDetails(pokemon).then(function () {
       //console.log(pokemon);
-      showModal(item);
+      showModal(pokemon);
     });
   }
   //fetches addl details using the details detailsUrl of the provided pokemon object (item) and then adds to it
