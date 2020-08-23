@@ -47,7 +47,7 @@ var pokemonRepository = (function () {
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
       //console.log(pokemon);
-      showModal(pokemon);
+      showModal(pokemon.name);
     });
   }
   //fetches addl details using the details detailsUrl of the provided pokemon object (item) and then adds to it
@@ -78,7 +78,7 @@ var pokemonRepository = (function () {
     closeButtonElement.addEventListener('click', hideModal);
 
     var titleElement = document.createElement('h1');
-    titleElement.innerText = "title";
+    titleElement.innerText = title;
 
     var contentElement = document.createElement('p');
     contentElement.innerText = "text";
