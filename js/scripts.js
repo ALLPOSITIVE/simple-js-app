@@ -47,7 +47,8 @@ var pokemonRepository = (function () {
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
       //console.log(pokemon);
-      showModal(pokemon.name);
+      showModal(pokemon.name, pokemon.height);
+      //showModal(pokemon.height);
     });
   }
   //fetches addl details using the details detailsUrl of the provided pokemon object (item) and then adds to it
@@ -81,12 +82,18 @@ var pokemonRepository = (function () {
     titleElement.innerText = title;
 
     var contentElement = document.createElement('p');
-    contentElement.innerText = "text";
+    contentElement.innerText = text;
+
+
+    var container = document.querySelector('#image-container');
+    var myImage = document.createElement('img');
+    myImage.src = 'https://pokeapi.co/api/v2/pokemon';
 
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
     modalContainer.appendChild(modal);
+    modal.appendChild(myImage);
 
     modalContainer.classList.add('is-visible');
   }
@@ -96,7 +103,7 @@ var pokemonRepository = (function () {
   }
 
   document.querySelector('#show-modal').addEventListener('click', () => {
-    showModal('title', 'text');
+    showModal(pokemon.name, pokemon.height);
   });
 
   window.addEventListener('keydown', (e) => {
