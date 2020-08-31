@@ -85,7 +85,7 @@ var pokemonRepository = (function () {
     contentElement.innerText = text;
 
 
-    var container = document.querySelector('#image-container');
+    var container = document.querySelector('#modal-container');
     var myImage = document.createElement('img');
     myImage.src = 'https://pokeapi.co/api/v2/pokemon';
 
