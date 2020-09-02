@@ -47,7 +47,7 @@ var pokemonRepository = (function () {
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
       //console.log(pokemon);
-      showModal(pokemon.name, pokemon.height);
+      showModal(pokemon);
       //showModal(pokemon.height);
     });
   }
@@ -65,7 +65,7 @@ var pokemonRepository = (function () {
       console.error(e);
     });
   }
-  function showModal(title, text) {
+  function showModal(pokemon) {
     // Clear all existing modal content
     modalContainer.innerHTML = '';
 
@@ -79,15 +79,15 @@ var pokemonRepository = (function () {
     closeButtonElement.addEventListener('click', hideModal);
 
     var titleElement = document.createElement('h1');
-    titleElement.innerText = title;
+    titleElement.innerText = pokemon.name;
 
     var contentElement = document.createElement('p');
-    contentElement.innerText = text;
+    contentElement.innerText = "Height: " + pokemon.height;
 
 
     var container = document.querySelector('#modal-container');
     var myImage = document.createElement('img');
-    myImage.src = 'https://pokeapi.co/api/v2/pokemon';
+    myImage.setAttribute('src', pokemon.imageUrl);
 
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
@@ -103,7 +103,7 @@ var pokemonRepository = (function () {
   }
 
   document.querySelector('#show-modal').addEventListener('click', () => {
-    showModal(pokemon.name, pokemon.height);
+    showModal(pokemon);
   });
 
   window.addEventListener('keydown', (e) => {
